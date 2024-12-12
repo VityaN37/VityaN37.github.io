@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Интернет-магазин</title>
+    <style>
+  :root {
+    --main-black: #000000; /* Черный цвет */
+    --main-purple: #6A0FAD; /* Фиолетовый цвет */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-black); /* Фон страницы черный */
+    color: white; /* Цвет текста белый */
+}
+
+header {
+    position: relative;
+    overflow: hidden; 
+    height: 600px; 
+    display: flex; /* Используйте flex для центровки */
+    flex-direction: column; /* Расположение элементов по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: center; /* Центрирование по вертикали */
+    text-align: center; /* Центрирование текста */
+}
+nav {
+    text-align: right; /* Выравнивание навигации вправо */
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Убираем отступы */
+}
+
+.nav-list li {
+    display: inline; /* Отображаем элементы в линию */
+    margin-left: 20px; /* Отступ между элементами */
+}
+
+.nav-list li a {
+    color: #fff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.nav-list li a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+    color: yellow; /* Цвет ссылок при наведении */
+}
+
+section {
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid var(--main-purple); /* Рамка продуктов фиолетовая */
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(106, 15, 173, 0.1); /* Полупрозрачный фиолетовый фон для продуктов */
+}
+
+.product img {
+    width: 100%;         
+    height: auto; /* Позволяет высоте адаптироваться к ширине */
+    max-height: 200px; /* Задает максимальную высоту, чтобы не превышать размер */
+    object-fit: contain; /* Сохранение пропорций без обрезки */
+}
+
+
+.logo img {
+    width: 100%;             
+    max-height: 100px;      
+    object-fit: contain;     
+}
+
+.logo {
+    margin-bottom: 20px; /* Отступ между логотипом и заголовком */
+    position: relative;
+    z-index: 2; /* Размещает элементы выше видео */
+    color: white; /* Цвет текста для лучшей читаемости */
+}
+h1 {
+    margin: 0; /* Убираем отступ по умолчанию */
+    position: relative;
+    z-index: 2; /* Размещает элементы выше видео */
+    color: white; /* Цвет текста для лучшей читаемости */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: var(--main-purple); /* Фон футера фиолетовый */
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.product button {
+    border: 2px solid #007BFF; /* Цвет контура */
+    background-color: transparent; /* Прозрачный фон */
+    color: #007BFF; /* Цвет текста */
+    padding: 10px 15px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Радиус скругления углов */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s, color 0.3s; /* Плавный переход */
+}
+
+.product button:hover {
+    background-color: #007BFF; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
+}
+
+.background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Располагает видео под остальными элементами */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop class="background-video">
+            <source src="./img/IMG_4046.MP4" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+        </video>
+        
+        <div class="logo">
+            <img src="./img/Скриншот 12-12-2024 222817.jpg" alt="Логотип" />
+        </div>
+        <h1>Beth Changes</h1>
+        
+    </header>
+    
+
+    <section id="home">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#products">Корзина</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+        <h2>Добро пожаловать в наш интернет-магазин!</h2>
+        <p>Здесь вы найдете стильную одежду на любой вкус.</p>
+      
+    </section>
+
+    <section id="products">
+        <h2>Наши продукты</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="./img/item1.jpg" alt="Продукт 1">
+                <h3>Барсетка 18+</h3>
+                <p>Цена: 1800 $</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+            <div class="product">
+                <img src="./img/item2.jpg" alt="Продукт 2">
+                <h3>Барсетка </h3>
+                <p>Цена: 2500 $</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+            <div class="product">
+                <img src="./img/item3.jpg" alt="Продукт 3">
+                <h3>Барсетка 52</h3>
+                <p>Цена: 52 руб.</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+            <div class="product">
+                <img src="./img/item4.jpg" alt="Продукт 4">
+                <h3>Барсетка</h3>
+                <p>Цена: 1900 $</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+            <div class="product">
+                <img src="./img/photo_2024-12-12_13-47-27.jpg" alt="Продукт 5">
+                <h3>Футболка</h3>
+                <p>Цена: 700 $</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+            <div class="product">
+                <img src="./img/photo_2024-06-30_20-05-57.jpg" alt="Продукт 6">
+                <h3>Кофта</h3>
+                <p>Цена: 3000 $</p>
+                <button>Купить</button>
+                <button>В корзину</button>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2023 Интернет-магазин</p>
+        <a href="https://t.me/vitea37" target="_blank" style="color: white;">Tелеграмм</a>
+    </footer>
+</body>
+</html>
